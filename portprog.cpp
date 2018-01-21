@@ -19,7 +19,7 @@ StorageReference images_ref = storage_ref.Child("Photos");
 StorageReference islandRef = storage_ref.Child("Photos/19894.jpg"];
 
 // Create local filesystem URL
-const char* local_url = "C:/Users/gbains/Downloads/19894.jpg";
+const char* local_url = "testFridge.jpg";
 
 // Download to the local filesystem
 Future future = islandRef.GetFile(local_url);
