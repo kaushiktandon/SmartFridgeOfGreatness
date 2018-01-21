@@ -15,6 +15,15 @@ class Recipe:
 	def __repr__(self):
 		return u'Recipe(name={}, url={}, ingredients={}, commonIngredients={}, missingIngredients={})'.format(
             self.name, self.url, self.ingredients, self.commonIngredients, self.missingIngredients)
+	def to_dict(self):
+		dest = {
+			u'name':self.name,
+			u'url':self.url,
+			u'ingredients':self.ingredients,
+			u'commonIngredients':self.commonIngredients,
+			u'missingIngredients':self.missingIngredients
+		}
+		return dest
 
 
 from itertools import chain, combinations
@@ -62,4 +71,27 @@ def getRecipes(ingredients):
 	return recipes
 
 recipes = getRecipes(ingredients)
-print recipes[0]
+
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
+# Use the application default credentials
+#cred = credentials.ApplicationDefault()
+cred = credentials.Certificate('/Users/kaush/SmartFridgeOfGreatness/demotesterito-2e621f253c03.json')
+
+firebase_admin.initialize_app(cred, {
+  'projectId': 'demotesterito',
+})
+
+
+db = firestore.client()
+doc_ref = db.collection(u'Recipes').document(u'alovelace')
+#db.collection(u'Recipes').add(recipes[0].to_dict())
+doc_ref.set({
+#    u'name': u'Ada',
+#    u'url': u'espn.go.com',
+#    u'ingredients': [{'a','b'}]
+#    u'Missing Ingredients': ingredients,
+#    u'Common Ingredients': ingredients
+})
