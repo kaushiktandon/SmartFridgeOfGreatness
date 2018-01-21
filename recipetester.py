@@ -63,3 +63,8 @@ def getRecipes(ingredients):
 
 recipes = getRecipes(ingredients)
 print recipes[0]
+
+# Recipe(name=Easy Quiche, url=http://www.bestrecipes.com.au/recipe/Easy-Quiche-L4517.html, 
+#ingredients=['eggs', 'cheese', 'flour', 'ham', 'onions', 'milk'], 
+#commonIngredients=['cheese', 'eggs', 'onions', 'ham', 'milk'], 
+#missingIngredients=['flour'])
