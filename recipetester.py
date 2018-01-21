@@ -91,13 +91,3 @@ def generateRecipes(ingredients):
 	#print i # number of api calls
 
 generateRecipes(ingredients)
-
-
-#db.collection(u'Recipes').add(recipes[0].to_dict())
-#doc_ref.set({
-#    u'name': u'Ada',
-#    u'url': u'espn.go.com',
-#    u'ingredients': ingredients,
-#    u'Missing Ingredients': ingredients,
-#    u'Common Ingredients': ingredients
-#})
