@@ -3,7 +3,6 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-
 import json
 import requests
 import urllib
